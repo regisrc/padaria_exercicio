@@ -16,7 +16,7 @@ namespace WebApplication3.Controllers
             _padariaService = padariaService;
         }
 
-        [HttpGet]
+        [HttpGet("get-comida")]
         public IActionResult Get(Guid id)
         {
             var result = _padariaService.GetById(id);
@@ -24,7 +24,7 @@ namespace WebApplication3.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPost("set-comida")]
         public IActionResult Post([FromBody]ComidaDto comidaDto)
         {
             var result = _padariaService.Insert(comidaDto);
